@@ -48,7 +48,7 @@
       <input name="passConfRegister" type="password" required [(ngModel)]="register.passConfRegister" #passConfRegister="ngModel" placeholder="Contraseña (confirmación)">
     </div>
 
-    <button class="boton-register" type="submit">Registrarse</button>
+    <button class="boton-register" type="submit" [disabled]="!registerForm.form.valid">Registrarse</button>
     <!--<button class="boton-login" type="submit" [disabled]="!loginForm.form.valid">Iniciar sesión</button> Se agrega [disabled] cuando se quiere deshabilitar el boton si se cumple la condición-->
     <!--<button (click) ="goToPage()">Ir a Page</button>-->
   </form>
