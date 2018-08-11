@@ -21,7 +21,7 @@
     </div>    
     <!--{{login.passLogin}}-->
     <div class="container-form"><a href="#" class="container-recuperar" (click)="showPromptRecu()">¿Olvidaste la contraseña?</a></div>
-    <button class="boton-login" type="submit">Iniciar sesión</button>
+    <button class="boton-login" type="submit" [disabled]="!loginForm.form.valid">Iniciar sesión</button>
     <!--<button class="boton-login" type="submit" [disabled]="!loginForm.form.valid">Iniciar sesión</button> Se agrega [disabled] cuando se quiere deshabilitar el boton si se cumple la condición-->
     <!--<button (click) ="goToPage()">Ir a Page</button>-->
   </form>
