@@ -1,0 +1,55 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Registrarse</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <h1>Bienvenido</h1>
+  <p>A continuación puede registrarse</p>
+  <form (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
+    <!--(ngSubmit)="onSubmit(loginForm)" Une la expresión a los eventos onSubmit, previene la recarga de la página al enviar el formulario, usarlo en un mismo formulario con otro boton con (click) causa una "doble subida".-->
+    <div class="container-form">
+      <label for="nombresRegister">Nombres</label>
+      <input name="nombresRegister" type="text" required [(ngModel)]="register.nombresRegister" #nombresRegister="ngModel" placeholder="Nombres">
+    </div>
+
+    <div class="container-form">
+      <label for="apellidosRegister">Apellidos</label>
+      <input name="apellidosRegister" type="text" required [(ngModel)]="register.apellidosRegister" #apellidosRegister="ngModel"
+        placeholder="Apellidos">
+    </div>
+
+    <div class="container-form">
+      <label for="emailRegister">Correo electrónico</label>
+      <input name="emailRegister" type="email" required [(ngModel)]="register.emailRegister" #emailRegister="ngModel" placeholder="Correo electrónico">
+    </div>
+
+    <div class="container-form">
+      <label for="emailConfRegister">Correo electrónico (confirmación)</label>
+      <input name="emailConfRegister" type="email" required [(ngModel)]="register.emailConfRegister" #emailConfRegister="ngModel" placeholder="Correo electrónico (confirmación)">
+    </div>
+
+    <div class="container-form">
+      <label for="passRegister">Contraseña</label>
+      <input name="passRegister" type="password" required [(ngModel)]="register.passRegister" #passRegister="ngModel" placeholder="Contraseña">
+    </div>
+
+    <div class="container-form">
+      <label for="passConfRegister">Contraseña (confirmación)</label>
+      <input name="passConfRegister" type="password" required [(ngModel)]="register.passConfRegister" #passConfRegister="ngModel" placeholder="Contraseña (confirmación)">
+    </div>
+
+    <button class="boton-register" type="submit">Registrarse</button>
+    <!--<button class="boton-login" type="submit" [disabled]="!loginForm.form.valid">Iniciar sesión</button> Se agrega [disabled] cuando se quiere deshabilitar el boton si se cumple la condición-->
+    <!--<button (click) ="goToPage()">Ir a Page</button>-->
+  </form>
+</ion-content>

@@ -2,30 +2,29 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { NgForm } from '../../../node_modules/@angular/forms';
+import { RegisterPage } from '../register/register';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  userLogin: string = '';
-  passLogin: string = '';
-  emailRecupera: string = '';
-  login = [
-    this.userLogin,
-    this.passLogin
-  ];
+  login = {
+    userLogin: '',
+    passLogin: '',
+    emailRecupera: ''
+  };
 
   alertMessages = [{
     "title": "Información faltante",
     "subtitle": "Por favor, revise la información suministrada"
-  },{
+  }, {
     "title": "Error de inicio de sesión",
     "subtitle": `El servidor se encuentra ocupado.
     Por favor, intente más tarde`
-  },{
+  }, {
     "title": 'Mensaje enviado',
-    "subtitle": `Se ha enviado el mensaje al correo "${this.emailRecupera}"`
+    "subtitle": `Se ha enviado el mensaje al correo "${this.login.emailRecupera}"`
   }
   ];
 
@@ -55,10 +54,10 @@ export class HomePage {
           text: 'Enviar',
           handler: data => {
             console.log('Saved clicked');
-            this.emailRecupera = data.correoRecu; //JSON.stringify(data.correoRecu) Convierte a texto y lo pone entre "".
-            this.alertMessages[2].subtitle = `Se ha enviado el mensaje al correo "${this.emailRecupera}"`;
+            this.login.emailRecupera = data.correoRecu; //JSON.stringify(data.correoRecu) Convierte a texto y lo pone entre "".
+            this.alertMessages[2].subtitle = `Se ha enviado el mensaje al correo "${this.login.emailRecupera}"`;
             this.showAlert(2);
-          }          
+          }
         }
       ]
     });
@@ -74,13 +73,17 @@ export class HomePage {
     alert.present();
   }
 
-  onSubmit(logForm: NgForm){
-    if((logForm.value.emailLogin == undefined || logForm.value.emailLogin == "") && (logForm.value.passLogin == undefined || logForm.value.passLogin == "")){
+  onSubmit(logForm: NgForm) {
+    if ((logForm.value.emailLogin == undefined || logForm.value.emailLogin == "") && (logForm.value.passLogin == undefined || logForm.value.passLogin == "")) {
       this.showAlert(0);
-    }else if((logForm.value.emailLogin != undefined || logForm.value.emailLogin != "") || (logForm.value.passLogin != undefined || logForm.value.passLogin != "")){
+    } else if ((logForm.value.emailLogin != undefined || logForm.value.emailLogin != "") || (logForm.value.passLogin != undefined || logForm.value.passLogin != "")) {
       this.showAlert(1);
     }
     console.log(logForm.value);
     console.log(logForm.valid);
+  }
+
+  goToPage() {
+    this.navCtrl.push(RegisterPage);
   }
 }

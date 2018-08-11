@@ -1,13 +1,5 @@
-page-home {
+page-register {
     display: block;
-}
-
-.img-logo{
-    display: block;
-    box-sizing: border-box;
-    margin: 0 auto;
-    width: 50%;
-    height: auto;
 }
 
 h1{
@@ -48,26 +40,7 @@ h1{
     box-shadow: 0px 5px 5px -2.5px #888888;
 }
 
-.container-recuperar{
-    display: flex;
-    width: 16rem;
-    justify-content: center;
-    margin: 1.5rem auto;
-    color: #1b52eb;
-    background-color: transparent;
-    font-size: 1.4rem;
-    text-decoration: none;
-}
-
-.container-recuperar:hover{
-    text-decoration: underline;
-}
-
-.container-recuperar:focus{
-    text-decoration: underline;
-}
-
-.boton-login{
+.boton-register{
     display: block;
     width: 80%;
     margin: auto;
@@ -78,36 +51,13 @@ h1{
     font-weight: bold; 
 }
 
-.boton-login:hover{
+.boton-register:hover{
     width: 82%;
     padding: 1.1rem;
     box-shadow: 0px 6px 5px -2.5px #888888;
 }
 
-.boton-login:focus{
-    width: 82%;
-    padding: 1.1rem;
-    box-shadow: 0px 6px 5px -2.5px #888888;
-}
-
-.boton-register-login{
-    display: block;
-    width: 80%;
-    margin: auto;
-    padding: 1rem;
-    background-color: #2ceb1b;
-    color: white;
-    font-size: 2rem;
-    font-weight: bold; 
-}
-
-.boton-register-login:hover{
-    width: 82%;
-    padding: 1.1rem;
-    box-shadow: 0px 6px 5px -2.5px #888888;
-}
-
-.boton-register-login:focus{
+.boton-register:focus{
     width: 82%;
     padding: 1.1rem;
     box-shadow: 0px 6px 5px -2.5px #888888;
